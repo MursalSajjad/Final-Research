@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/gamification/src-gen" creationIcons="false" editDirectory="/gamification.edit/src-gen"
+    editorDirectory="/gamification.editor/src-gen" modelPluginID="gamification" modelName="Gamification"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>gamification.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Gamification" disposableProviderFactory="true" ecorePackage="gamification.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gamification.ecore#//Shapes">
+      <genEnumLiterals ecoreEnumLiteral="gamification.ecore#//Shapes/Square"/>
+      <genEnumLiterals ecoreEnumLiteral="gamification.ecore#//Shapes/Circle"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gamification.ecore#//MechanicType">
+      <genEnumLiterals ecoreEnumLiteral="gamification.ecore#//MechanicType/Setup"/>
+      <genEnumLiterals ecoreEnumLiteral="gamification.ecore#//MechanicType/Rule"/>
+    </genEnums>
+    <genClasses ecoreClass="gamification.ecore#//GamifiedPack">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//GamifiedPack/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gamification.ecore#//GamifiedPack/mechanics"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gamification.ecore#//GamifiedPack/aesthetics"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gamification.ecore#//GamifiedPack/dynamics"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Dynamics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Dynamics/name"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Mechanics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Mechanics/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Mechanics/type"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Aesthetics"/>
+    <genClasses ecoreClass="gamification.ecore#//BAdge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//BAdge/reward"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//BAdge/shapes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//BAdge/leaderboards"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Progress">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Progress/notification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Progress/notificationn"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Leaderboards">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Leaderboards/notification"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Points">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Points/totalPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Points/ObtainedPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Level">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Level/maxValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Level/actualValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Level/minVAlue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Level/points"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Level/badge"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Level/progress"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gamification.ecore#//Level/time"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Time/maxTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Time/totalTime"/>
+    </genClasses>
+    <genClasses ecoreClass="gamification.ecore#//Notification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Notification/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Notification/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gamification.ecore#//Notification/sound"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

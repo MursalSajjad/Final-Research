@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gamification" nsURI="http://www.example.org/gamification" nsPrefix="gamification">
+  <eClassifiers xsi:type="ecore:EClass" name="GamifiedPack">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mechanics" lowerBound="1"
+        upperBound="-1" eType="#//Mechanics" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aesthetics" upperBound="-1"
+        eType="#//Aesthetics" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamics" upperBound="-1"
+        eType="#//Dynamics" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dynamics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MechanicType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aesthetics"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BAdge" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reward" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shapes" eType="#//Shapes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leaderboards" eType="#//Leaderboards"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Progress" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notification" eType="#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notificationn" eType="#//Notification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Leaderboards" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notification" eType="#//Notification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Points" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ObtainedPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Level" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minVAlue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" eType="#//Points"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="badge" lowerBound="1" eType="#//BAdge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="progress" lowerBound="1"
+        eType="#//Progress"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//Time"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Notification" eSuperTypes="#//Mechanics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Shapes">
+    <eLiterals name="Square"/>
+    <eLiterals name="Circle" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MechanicType">
+    <eLiterals name="Setup"/>
+    <eLiterals name="Rule" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>
