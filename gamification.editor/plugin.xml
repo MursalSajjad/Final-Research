@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gamification -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gamification.presentation.GamificationModelWizardID"
+            name="%_UI_GamificationModelWizard_label"
+            class="gamification.presentation.GamificationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GamificationModelFile.gif">
+         <description>%_UI_GamificationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gamification -->
+      <editor
+            id="gamification.presentation.GamificationEditorID"
+            name="%_UI_GamificationEditor_label"
+            icon="icons/full/obj16/GamificationModelFile.gif"
+            extensions="gamification"
+            class="gamification.presentation.GamificationEditor"
+            contributorClass="gamification.presentation.GamificationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
